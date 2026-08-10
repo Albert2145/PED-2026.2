@@ -1,0 +1,13 @@
+int main()
+{
+    //Questão 2
+    float c;
+    
+    printf("Informe a temperatura em graus celsius.\n");
+    scanf("%f", &c);
+    f = c * 9/5 + 32;
+    
+    printf("A temperatura informada convertida para Fahrenheit eh %f", f);
+    
+    return 0;
+}
