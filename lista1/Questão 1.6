@@ -12,7 +12,7 @@ int main()
     printf("Vamos calcular o custo da viagem!\n");
 
     printf("Quantos quilômetros seu carro percorre por litro de combustível?\n");
-    scanf("%d", kmL&);
+    scanf("%d", &kmL);
     
     printf("Quantos quilômetros você pretende viajar de carro?\n");
     scanf("%d", &distancia);
@@ -21,7 +21,12 @@ int main()
     scanf("%f", &gasolina);
     
     printf("Quantas pessoas vão viajar com você e dividir a conta?\n");
+    scanf("%d", &pessoas);
     
+    float valor = (distancia / kmL) * gasolina;
+    float valorDiv = valor / pessoas;
+    
+    printf("O valor gasco com gasolina na viagem deu R$%.2f por pessoa", valorDiv);
 
     return 0;
 }
