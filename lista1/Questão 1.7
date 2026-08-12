@@ -1,1 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    //Questao 1.7
+    int a, b, c;
 
+    printf("Digite o primeiro número inteiro.\n");
+    scanf("%d", &a);
+
+    printf("Digite o segundo número inteiro.\n");
+    scanf("%d", &b);
+
+    c = a;
+    a = b;
+    b = c;
+
+    printf("Os valores trocados ficam a=%d e b=%d", a, b);
+}
