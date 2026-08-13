@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+    //Questao 2.7
+    float ladoa, ladob, ladoc;
+    
+    printf("Informe os tres lados do triangulo\n");
+    scanf("%f", &ladoa);
+    scanf("%f", &ladob);
+    scanf("%f", &ladoc);
+
+    if(ladoa + ladob > ladoc && ladoa + ladoc > ladob && ladoc + ladob > ladoa){
+        if(ladoa == ladob && ladob == ladoc){
+            printf("Triangulo Equilátero");
+        }
+        else if((ladoa == ladob && ladoa != ladoc) || (ladoa == ladoc && ladoa != ladob) || (ladob == ladoc && ladob != ladoa)){
+            printf("Triangulo Isóceles");
+        }
+        else{
+            printf("Triangulo Escaleno");
+        }
+    }
+
+    return 0;
+}
