@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    //Questao 3.2
+    int num, soma, total,  i;
+
+    printf("Informe quantos números vai somar.\n");
+    scanf("%d", &num);
+
+    for(i = 0; i < num; i++){
+        printf("Digite um número.\n");
+        scanf("%d", &soma);
+        total += soma;
+    }
+    
+    printf("A soma dos números deu %d.", total);
+    return 0;
+}
