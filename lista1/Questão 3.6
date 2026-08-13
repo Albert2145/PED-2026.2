@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+    //Questao 3.6
+    int num, fat, i;
+
+    printf("Digite um número inteiro.\n");
+    scanf("%d", &num);
+
+    if(num < 0){
+        printf("Apenas números não negativos");
+    }
+    else if(num == 0){
+        printf("O fatorial de 0 é 1");
+    }
+    else{
+        fat = num;
+        for(i = num - 1; i >= 1; i--){
+           fat = fat * i;
+        }
+    }printf("O fatorial de %d é %d", num, fat);
+
+    return 0;
+}
