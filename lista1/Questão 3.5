@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(){
+    //Questao 3.5
+    int num, i;
+
+    printf("Digite um número inteiro.\n");
+    scanf("%d", &num);
+
+    if(num <= 1){
+        printf("O numero não é primo");
+    }
+    for(i = 2; i * i <= num; i++){
+        if(num % i == 0){
+            printf("%d não é primo", num);
+            return 0;
+        }
+    }
+    printf("%d é primo.\n", num);
+
+    return 0;
+}
