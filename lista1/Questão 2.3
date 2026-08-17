@@ -2,24 +2,24 @@
 int main()
 {
     //Questao 2.3
-    float num1, num2, num3;
+    float a, b, c;
 
     printf("Informe tres numeros.\n");
-    scanf("%f", &num1);
-    scanf("%f", &num2);
-    scanf("%f", &num3);
+    scanf("%f", &a);
+    scanf("%f", &b);
+    scanf("%f", &c);
 
-    if (num1 > num2 && num1 > num3){
-        printf("O maior numero é %.1f.\n", num1);
-    }
-    else if (num2 > num1 && num2 > num3){
-        printf("O maior numero é %.1f.\n", num2);
-    }
-    else if (num3 > num1 && num3 > num2){
-        printf("O maior numero é %.1f.\n", num3);
-    }
-    else{
+    if(a == b && a == c){
         printf("Os numeros são iguais.\n");
+    }
+    else if(a >= b && a >= c){
+        printf("O maior numero é %d.\n", a);
+    }
+    else if(b >= a && b >= c){
+        printf("O maior numero é %d.\n", b);
+    }
+    else if(c >= a && c >= b){
+        printf("O maior numero é %d.\n", c);
     }
     
     return 0;
