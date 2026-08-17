@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    //Questao 3.8
+    int S = 0, R = 0, C = 0, expReg, cobaias, totalCobaias = 0, i = 1;
+    char tipoCobaia;
+    float percentS, percentR, percentC;
+
+    printf("Informe a quantidade de experimentos registrados.\n");
+    scanf("%d", &expReg);
+
+    while(i > 0){
+        printf("Informe a quantidade de cobaias utilizadas e por tipo S:Sapo, R:Rato ou C:Coelho. (Digite 0 para sair)\n");
+        scanf("%d", &cobaias);
+        if(cobaias > 0){
+            scanf(" %c", &tipoCobaia);
+            if(tipoCobaia == 's' || tipoCobaia == 'S'){
+                S = S + cobaias;
+                totalCobaias = totalCobaias + cobaias;
+            }
+            else if(tipoCobaia == 'r' || tipoCobaia == 'R'){
+                R = R + cobaias;
+                totalCobaias = totalCobaias + cobaias;
+            }
+            else if(tipoCobaia == 'c' || tipoCobaia == 'C'){
+                C = C + cobaias;
+                totalCobaias = totalCobaias + cobaias;
+            }
+            else{
+                printf("Tipo de cobaia inválido, tente novamente.\n");
+            }
+        }
+        else{
+            i -= 1;
+        }
+    }
+    percentS = ((float)S / totalCobaias) * 100;
+    percentR = ((float)R / totalCobaias) * 100;
+    percentC = ((float)C / totalCobaias) * 100;
+    //Confesso que nessa parte eu precisei da ajuda do google para saber que precisava colocar (float) na frente das variáveis para dar certo kkkkkk
+
+    printf("Total: %d cobaias\n", totalCobaias);
+    printf("Total de sapos: %d\n", S);
+    printf("Total de ratos: %d\n", R);
+    printf("Total de coelhos: %d\n", C);
+    printf("Percentual de sapos: %.2f%%\n", percentS);
+    printf("Percentual de ratos: %.2f%%\n", percentR);
+    printf("Percentual de coelhos: %.2f%%\n", percentC);
+
+    return 0;
+}
