@@ -1,15 +1,23 @@
 #include <stdio.h>
 int main(){
     //Questao 3.7
-    int soma,numLidos, total, i;
+    int soma,numLidos, media, i = 0;
 
     while(i >= 0){
         printf("Digite um número inteiro. (Digite -1 para parar)\n");
         scanf("%d", &i);
-        soma = soma + i;
-        numLidos += 1;
+        if(i >= 0){
+            soma = soma + i;
+            numLidos += 1;
+            media = soma / numLidos;
+        }
     }
-    total
-
+    
+    if(numLidos > 0){
+        printf("Foram lidos %d números e a média é %d", numLidos, media);
+    }
+    else{
+        printf("Não foi lido nenhum número.");
+    }
     return 0;
 }
