@@ -6,8 +6,11 @@ int main()
 
     printf("Informe a idade.\n");
     scanf("%d", &idade);
-
-    if(idade >= 0 && idade <= 11){
+    
+    if(idade < 0){
+        printf("Valor invalido");
+    }
+    else if(idade >= 0 && idade <= 11){
         printf("Criança");
     }
     else if(idade >= 12 && idade <= 17){
