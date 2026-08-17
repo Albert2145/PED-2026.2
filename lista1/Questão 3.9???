@@ -14,18 +14,18 @@ int main()
     //Precisei pesquisar como gerar numeros aleatórios em C 
 
     for(i = 1; i <= 10; i++){
+        resp1='_';
+        resp2='_';
+        resp3='_';
         printf("==== Chance %d ====\n", i);
         printf("Palpite: ");
         scanf("%d %d %d", &palp1, &palp2, &palp3);
 
         if (palp1 == saida1){
             resp1 = '+';
-        }
+        }        
         else if (palp1 == saida2 || palp1 == saida3){
             resp1 = '!';
-        }
-        else{
-            resp1 = '_';
         }
 
         if (palp2 == saida2){
@@ -34,19 +34,14 @@ int main()
         else if (palp2 == saida1 || palp2 == saida3){
             resp2 = '!';
         }
-        else{
-            resp2 = '_';
-        }
-
+    
         if (palp3 == saida3){
             resp3 = '+';
         }
         else if (palp3 == saida1 || palp3 == saida2){
             resp3 = '!';
         }
-        else{
-            resp3 = '_';
-        }
+        
 
         printf("Saída: %c %c %c\n", resp1, resp2, resp3);
  
@@ -56,7 +51,7 @@ int main()
         }
     }
  
-    printf("Suas chances acabaram. O número secreto era %d %d %d\n", saida1, saida2, saida3);
+    printf("Suas chances acabaram. O número secreto era %d%d%d\n", saida1, saida2, saida3);
  
     return 0;
 }
