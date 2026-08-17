@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+    //Questao 4.3
+long fatorial(int a){
+        int fat = a;
+        for(int i = a - 1; i >= 1; i--){
+           fat = fat * i;
+        }
+        return fat;
+    }
+
+int main(){
+    int a;
+
+    printf("Informe um inteiro não negativo para calcular o fatorial: ");
+    scanf("%d", &a);
+
+    if(a == 0){
+        printf("O fatorial de 0 é 1");
+    }
+    else if(a < 0){
+        printf("Apenas números não negativos");
+    }
+    else{
+        printf("O fatorial de %d é %ld", a, fatorial(a));
+    }
+    return 0;
+}
