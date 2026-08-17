@@ -2,14 +2,18 @@
 int main()
 {
     //Questao 3.1
-    int num, i;
+    int num;
 
     printf("Digite um número inteiro.\n");
     scanf("%d", &num);
 
-    for(i = 1; i <= num; i++){
-        printf("%d\n", i);
+    if(num > 0){
+        for(int i = 1; i <= num; i++){
+            printf("%d\n", i);
+        }
     }
+    else{
+        printf("Um número maior do que 0");
     
     return 0;
 }
