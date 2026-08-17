@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+    //Questao 4.1
+int maior(int a, int b, int c){
+
+    if (a > b && a > c){
+    return printf("O maior numero é %d.\n", a);
+    }
+    else if (b > a && b > c){
+        return printf("O maior numero é %d.\n", b);
+    }
+    else if (c > a && c > b){
+        return printf("O maior numero é %d.\n", c);
+    }
+    else{
+        return printf("Os numeros são iguais.\n");
+    }
+}
+
+int main(){
+
+int a, b, c;
+
+printf("Informe três valores inteiros: ");
+scanf("%d %d %d", &a, &b, &c);
+maior(a, b, c);
+
+    return 0;
+}
