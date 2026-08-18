@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TRUE 1
+#define FALSE 0
+
+int isCapicua(int original){
+    int a, num;
+    int inverso = 0;
+    a = original;
+    while(a > 0){
+        num = a % 10;
+        inverso = (inverso * 10) + num;
+        a = a / 10;
+    }
+
+    if(inverso == original){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+int main()
+{
+    //Questao 4.6
+    int a;
+
+    printf("Digite um inteiro para verificar se é capicua.\n");
+    scanf("%d", &a);
+
+    if(isCapicua(a)){
+        printf("É capicua");
+    }
+    else{
+        printf("Não é capicua");
+    }
+    
+    return 0;
+}
