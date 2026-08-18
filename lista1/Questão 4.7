@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int tamanhoSequenciaCollatz(int n){
+    int i;
+    for(i = 0; n > 1; i++){
+        if(n % 2 == 0){
+            n = n / 2;
+        }
+        else{
+            n = (3 * n) + 1;
+        }
+    }
+    return i;
+}
+
+int main(){
+
+    //Questão 4.7
+    long int a;
+    int talvezMaior, numMaior, maior = 0;
+
+    printf("Digite um valor inteiro de 1 a 100.000\n");
+    scanf("%ld", &a);
+
+    for(int i = 1; i <= a; i++){
+        talvezMaior = tamanhoSequenciaCollatz(i);
+        if(talvezMaior > maior){
+            maior = talvezMaior;
+            numMaior = i;
+        }
+    }
+    printf("O numero entre 1 e %ld que gerou a maior sequencia foi %d que totalizou %d passos\n", a, numMaior, maior);
+    
+    return 0;
+}
