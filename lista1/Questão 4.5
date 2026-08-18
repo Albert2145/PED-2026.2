@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int somaDigitos(int a){
+    int soma;
+    while(a > 0){
+        int resto = a % 10;
+        soma = soma + resto;
+        a = a / 10;
+    }
+    return soma;
+}
+
+int main()
+{
+    //Questao 4.5
+    int a;
+
+    printf("Digite um numero inteiro.\n");
+    scanf("%d", &a);
+
+    printf("O soma dos digitos de %d é %d.", a, somaDigitos(a));
+
+    return 0;
+}
