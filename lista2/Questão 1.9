@@ -9,6 +9,11 @@ void dec2bin(int n){
     else{
         dec2bin(n / 2);
         printf("%d", n % 2);
+        //Pilha de execução(O mesmo exemplo da lista, o 13)
+        // 1 < 2 --> print 1 e para a recursão
+        // 3 / 2 = 1 resto 1 --> print 1
+        // 6 / 2 = 3 restp 0 --> print 0
+        // 13 / 2 = 6 resto 1 --> print 1
     }
 }
 
@@ -18,7 +23,7 @@ int main(){
 
     int n;
 
-    printf("Digite um inteiro não negativo e ele será convertido para decimal\n");
+    printf("Digite um ineiro não negativo e ele será convertido para decimal\n");
     scanf("%d", &n);
 
     if(n >= 0){
