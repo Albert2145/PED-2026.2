@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void intervaloCrescente(int a, int b){
+    if(b < a){
+        return;
+    }
+    else{
+        intervaloCrescente(a, b - 1);
+        printf("%d  ", b);
+
+    }
+}
+
+int main(){
+
+    //Questão 1.6
+
+    int a, b;
+    printf("Digite um número inteiro para A e depois um para B. (A tem que ser menor que B)\n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    
+    intervaloCrescente(a, b);
+
+    return 0;
+}
