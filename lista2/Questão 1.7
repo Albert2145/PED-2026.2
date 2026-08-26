@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void intervaloCrescente(int a, int b){
+void intervaloDecrescente(int a, int b){
     if(b < a){
         return;
     }
     else{
         printf("%d  ", b);
-        intervaloCrescente(a, b - 1);
+        intervaloDecrescente(a, b - 1);
         //Pilha de execução(5 e 10 como exemplo)
         //b < a --> para a função
-        //intervaloCrescente 5, 4 --> print 5
-        //intervaloCrescente 5, 5 --> print 6
-        //intervaloCrescente 5, 6 --> print 7
-        //intervaloCrescente 5, 7 --> print 8
-        //intervaloCrescente 5, 8 --> print 9
-        //intervaloCrescente 5, 9 --> print 10 (antes de ir para a recursão)
+        //intervaloDecrescente 5, 4 --> print 5
+        //intervaloDecrescente 5, 5 --> print 6
+        //intervaloDecrescente 5, 6 --> print 7
+        //intervaloDecrescente 5, 7 --> print 8
+        //intervaloDecrescente 5, 8 --> print 9
+        //intervaloDecrescente 5, 9 --> print 10 (antes de ir para a recursão)
     }
 }
 
@@ -24,11 +24,16 @@ int main(){
     //Questão 1.7
 
     int a, b;
+
     printf("Digite um número inteiro para A e depois um para B. (A tem que ser menor que B)\n");
     scanf("%d", &a);
     scanf("%d", &b);
-    
-    intervaloCrescente(a, b);
 
+    if(a < b){
+        intervaloDecrescente(a, b);
+    }
+    else{
+        printf("O número digitado para A precisa ser menor que B");
+    }
     return 0;
 }
