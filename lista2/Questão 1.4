@@ -3,12 +3,12 @@
 
 long long int contaDigitos(long long int n){
     if(n < 10){
-        return 0;
+        return 1;
     }
     else{
         n = contaDigitos(n / 10) + 1;
         //Pilha de execução(usando 987654 como exemplo);
-        // 0
+        // 1
         // contaDigitos(9) + 1 --> 1 + 1 = 2
         // contaDigitos(98) + 1 --> 2 + 1 = 3
         // contaDigitos(987) + 1 --> 3 + 1 = 4
