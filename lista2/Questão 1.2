@@ -9,9 +9,9 @@ int fat(int n){
         n = n * fat(n -1);
         //Pilha de execução(usando 4 como exemplo);
         // 1
-        // 2 + fat(1) --> 2 + 1 = 3
-        // 3 + fat(2) --> 3 + 3 = 6
-        // 4 + fat(3) --> 4 + 6 = 10
+        // 2 * fat(1) --> 2 * 1 = 2
+        // 3 * fat(2) --> 3 * 3 = 9
+        // 4 * fat(3) --> 4 * 6 = 24
     }
     return n;
 }
