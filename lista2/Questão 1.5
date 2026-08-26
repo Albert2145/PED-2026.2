@@ -8,12 +8,12 @@ long long int contaDigitos(long long int n){
     else{
         n = contaDigitos(n / 10) + n % 10;
         //Pilha de execução(usando 987654 como exemplo);
-        // 0
-        // contaDigitos(9) + 9 -->
-        // contaDigitos(98) + 8 -->
-        // contaDigitos(987) + 7 -->
-        // contaDigitos(9876) + 6 -->
-        // contaDigitos(98765) + 5 --> 
+        // 9
+        // contaDigitos(9) + 8 --> 9 + 8 = 17
+        // contaDigitos(98) + 7 --> 17 + 7 = 24
+        // contaDigitos(987) + 6 --> 24 + 6 = 30
+        // contaDigitos(9876) + 5 --> 30 + 5 = 35
+        // contaDigitos(98765) + 4 --> 35 + 4 = 39
     }
     return n;
 }
