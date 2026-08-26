@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int nesimo(int n){
+long long int nesimo(long long int n){
     if(n == 1){
         return 1;
     }
@@ -26,6 +26,6 @@ int main(){
     printf("Digite um número.\n");
     scanf("%d", &n);
 
-    printf("%d", nesimo(n));
+    printf("%lld", nesimo(n));
     return 0;
 }
