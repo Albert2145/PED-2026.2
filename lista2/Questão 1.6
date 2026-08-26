@@ -8,7 +8,14 @@ void intervaloCrescente(int a, int b){
     else{
         intervaloCrescente(a, b - 1);
         printf("%d  ", b);
-
+        //Pilha de execução(5 e 10 como exemplo)
+        //b < a --> para a função
+        //intervaloCrescente 5, 4 --> print 5
+        //intervaloCrescente 5, 5 --> print 6
+        //intervaloCrescente 5, 6 --> print 7
+        //intervaloCrescente 5, 7 --> print 8
+        //intervaloCrescente 5, 8 --> print 9
+        //intervaloCrescente 5, 9 --> print 10
     }
 }
 
