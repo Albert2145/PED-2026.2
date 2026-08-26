@@ -1,1 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+void dec2bin(int n){
+    if(n < 2){
+        printf("%d", n);
+        return;
+    }
+    else{
+        dec2bin(n / 2);
+        printf("%d", n % 2);
+    }
+}
+
+int main(){
+
+    //Questão 1.9
+
+    int n;
+
+    printf("Digite um inteiro não negativo e ele será convertido para decimal\n");
+    scanf("%d", &n);
+
+    if(n >= 0){
+        dec2bin(n);
+    }
+    else{
+        printf("O número não pode ser negativo");
+    }
+    return 0;
+}
