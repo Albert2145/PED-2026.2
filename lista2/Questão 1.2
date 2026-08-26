@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fat(int n){
+    if(n == 1){
+        return 1;
+    }
+    else{
+        n = n * fat(n -1);
+        //Pilha de execução(usando 4 como exemplo);
+        // 1
+        // 2 + fat(1) --> 2 + 1 = 3
+        // 3 + fat(2) --> 3 + 3 = 6
+        // 4 + fat(3) --> 4 + 6 = 10
+    }
+    return n;
+}
+
+int main(){
+
+    //Questão 1.1
+
+    int n;
+    printf("Digite um número para que seja feito o somatório.\n");
+    scanf("%d", &n);
+
+    printf("%d", fat(n));
+    return 0;
+}
