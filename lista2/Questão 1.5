@@ -1,1 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+long long int contaDigitos(long long int n){
+    if(n < 10){
+        return n;
+    }
+    else{
+        n = contaDigitos(n / 10) + n % 10;
+        //Pilha de execução(usando 987654 como exemplo);
+        // 0
+        // contaDigitos(9) + 9 -->
+        // contaDigitos(98) + 8 -->
+        // contaDigitos(987) + 7 -->
+        // contaDigitos(9876) + 6 -->
+        // contaDigitos(98765) + 5 --> 
+    }
+    return n;
+}
+
+int main(){
+
+    //Questão 1.5
+
+    long long int n;
+    printf("Digite um número.\n");
+    scanf("%lld", &n);
+
+    printf("%lld", contaDigitos(n));
+    return 0;
+}
