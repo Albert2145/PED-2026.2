@@ -1,1 +1,28 @@
-º~º
+#include <stdio.h>
+#include <stdlib.h>
+
+int josefo(int n, int k) {
+    if (n == 1)
+        return 0;
+    return (josefo(n - 1, k) + k) % n;
+    //Pilha de execução
+    // 1
+    // (josefo(2,2) + 2) % 2 -> josefo(1,2) + 2 --> (0 + 2) % 2 = 0
+    // (josefo(3,2) + 2) % 3 -> josefo(2,2) + 2 --> (0 + 2) % 3 = 2 
+    // (josefo(4,2) + 2) % 4 -> josefo(3,2) + 2 --> (2 + 2) % 4 = 0
+    // (josefo(5,2) + 2) % 5 -> josefo(4,2) + 2 --> (0 + 2) % 5 = 2
+}
+
+int main(){
+
+    //Questão 1.10
+
+    int n, k;
+
+    printf("Informe o numero de pessoas e quantos passos até eliminar alguém.\n");
+    scanf("%d %d", &n, &k);
+
+    printf("Quem sobreviveu foi a pessoa número %d.", josefo(n, k) + 1);
+   
+    return 0;
+}
