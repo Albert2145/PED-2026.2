@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char estatico[100];
+
+    printf("Escreve ai\n");
+    scanf(" %s", estatico);
+    int i = 0;
+    while(estatico[i] != '\0'){
+        i++;
+    }
+
+    char *dinamico;
+    dinamico = (char *) malloc(i*sizeof(char));
+
+    int j = 0;
+    while(estatico[j] != '\0'){
+        j++;
+        *(dinamico + j-1) = estatico[j - 1];
+    }
+    printf("%s", dinamico);
+    return 0;
+}
