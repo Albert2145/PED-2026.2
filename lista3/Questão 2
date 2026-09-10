@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void f1(int *x, int *y){
+    int aux;
+    if(*y > *x){
+        aux = *x;
+        *x = *y;
+        *y = aux;
+    }
+    printf("%d\n", *x);
+    printf("%d\n", *y);
+}
+
+void main()
+{
+    int x = 10, y = 15;
+
+    f1(&x, &y);
+}
