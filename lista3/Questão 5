@@ -20,7 +20,8 @@ void adiciona_valor(int *v, int tamanho, int valor, int pos){
         }
 }
 
-int main(){
+int main()
+{
 
     //Questão 5
 
