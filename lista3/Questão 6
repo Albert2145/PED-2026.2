@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define TRUE 1
+#define FALSE 0
+
+int *aloca(int n, int preenche){
+    if(preenche){
+        return (int *) calloc(n, sizeof(int));
+    }
+    else{
+        return (int *) malloc(n*sizeof(int));
+    }
+}
+
+void preenche(int *v, int n, int valor, int is_aleatorio){
+    if(is_aleatorio){
+        for(int i = 0; i < n; i++){
+            *(v + i) = rand() % 101;
+        }
+    }
+    else{
+        for(int i = 0; i < n; i++){
+            *(v + i) = valor;
+        }
+    }
+}
+
+void imprime(int *v, int n){
+    for(int i = 0; i < n; i++){
+        printf("Posição %d = %d\n", i + 1, *(v + i));
+    }
+}
+
+int main()
+{
+
+//Questão 6
+
+int *v1, *v2;
+
+v1 = aloca(7, 0);
+v2 = aloca(5, 1);
+
+imprime(v1, 7);
+imprime(v2, 5);
+
+preenche(v1, 7, 0, 1);
+preenche(v2, 5, 100, 0);
+
+imprime(v1, 7);
+imprime(v2, 5);
+
+    return 0;
+}
