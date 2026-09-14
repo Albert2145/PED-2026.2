@@ -12,8 +12,8 @@ void f1(int *x, int *y){
     printf("%d\n", *y);
 }
 
-void main(){
-
+void main()
+{
     //Questão 2
 
     int x = 10, y = 15;
