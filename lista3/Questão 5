@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void adiciona_valor(int *v, int tamanho, int valor, int pos){
+        v = (int *) calloc(tamanho, sizeof(int));
+        if(pos > tamanho){
+            v = (int *) realloc(v, pos*sizeof(int));
+        }
+        *(v + pos - 1) = valor;
+        
+        if(tamanho >= pos){
+            for(int i = 0; i < tamanho; i++){
+                printf("%d\n", v[i]);
+            }
+        }
+        else{
+           for(int i = 0; i < pos; i++){
+                printf("%d\n", v[i]);
+            } 
+        }
+}
+
+int main(){
+
+    //Questão 5
+
+    int tamanho = 10;
+    int valor = 22, pos, v;
+
+    printf("Digita a pos\n");
+    scanf("%d", &pos);
+
+    adiciona_valor(&v, tamanho, valor, pos);
+    
+    return 0;
+}
