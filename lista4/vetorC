@@ -2,19 +2,20 @@
 #include <stdlib.h>
 #include "vetor.h"
 
-void append(vetor v, int valor){
-    if(v.tamanho_alocado == 0 && v.tamanho_ocupado == 0){
-        v.tamanho_alocado = 2;
+void append(vetor *v, int valor){
+    if(v->tamanho_alocado == 0 && v->tamanho_ocupado == 0){
+        v->tamanho_alocado = 2;
+        v->dados =(int *) malloc(v->tamanho_alocado*sizeof(int));
     }
 
-    if(v.tamanho_ocupado == v.tamanho_alocado){
-        v.dados =(int *) realloc(v.tamanho_alocado*2,sizeof(int));
-        v.tamanho_alocado *= 2;
+    if(v->tamanho_ocupado == v->tamanho_alocado){
+        v->dados =(int *) realloc(v->dados,(v->tamanho_alocado*2)*sizeof(int));
+        v->tamanho_alocado *= 2;
     }
     //adiciona o valor ao vetor
-    *(v.dados + v.tamanho_ocupado) = valor;
+    *(v->dados + v->tamanho_ocupado) = valor;
 
-    v.tamanho_ocupado++;
+    v->tamanho_ocupado++;
 }
 
 
@@ -28,12 +29,18 @@ void show(vetor v){
 vetor *slice(vetor v, int x0, int x1){
     vetor *novo = (vetor *) malloc(sizeof(vetor));
 
-    novo->tamanho_alocado = x1-x0;
-    novo->tamanho_ocupado = x1-x0;
+    int j = 0;
+    for(int i = 0; i < v.tamanho_ocupado; i++){
+        if(*(v.dados+i) >= x0 && *(v.dados+i) <= x1){
+            j++;
+        }
+    }
+    novo->tamanho_alocado = j;
+    novo->tamanho_ocupado = j;
     novo->dados = (int *) malloc(novo->tamanho_alocado*sizeof(int));
 
-    for(int i = 0; i <= v.tamanho_ocupado; i++ ){
-        int k = 0;
+    int k = 0;
+    for(int i = 0; i < v.tamanho_ocupado; i++ ){
         if(*(v.dados+i) >= x0 && *(v.dados+i) <= x1){
             *(novo->dados+k) = *(v.dados+i);
             k++;
@@ -43,6 +50,8 @@ vetor *slice(vetor v, int x0, int x1){
 }
 
 
-void pop(vetor v){
-    v.tamanho_ocupado--;
+void pop(vetor *v){
+    if(v->tamanho_ocupado > 0){
+        v->tamanho_ocupado--;
+    }
 }
