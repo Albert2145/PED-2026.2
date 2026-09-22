@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "vetor.h"
+
+int main()
+{
+    vetor v = {NULL, 0, 0};
+    int valor, x0 = 3, x1 = 50;
+
+    for(int i = 0; i < 8; i++){
+        printf("Digite um  valor para o vetor\n");
+        scanf("%d", &valor);
+    }
+
+    append(v, valor);
+    show(v);
+    show(slice(v, x0, x1));
+
+    pop(v);
+    show(v);
+
+    return 0;
+}
