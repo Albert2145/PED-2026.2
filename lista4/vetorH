@@ -7,9 +7,9 @@ typedef struct{
     int tamanho_ocupado;
 }vetor;
 
-void append(vetor v, int valor);
+void append(vetor *v, int valor);
 void show(vetor v);
-vetor slice(vetor v, int x0, int x1);
-void pop(vetor v);
+vetor *slice(vetor v, int x0, int x1);
+void pop(vetor *v);
 
 #endif
