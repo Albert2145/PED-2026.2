@@ -6,6 +6,9 @@ void append(vetor *v, int valor){
     if(v->tamanho_alocado == 0 && v->tamanho_ocupado == 0){
         v->tamanho_alocado = 2;
         v->dados =(int *) malloc(v->tamanho_alocado*sizeof(int));
+        if(v->dados == NULL){
+            printf("Não consegui alocar");
+            exit(1);
     }
 
     if(v->tamanho_ocupado == v->tamanho_alocado){
