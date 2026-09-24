@@ -46,7 +46,7 @@ vetor *slice(vetor v, int x0, int x1){
         }
 
     for(int i = 0; i < v.tamanho_ocupado; i++ ){
-        if(i >= x0 && i <= x1){
+        if(i >= x0-1 && i <= x1){
             *(novo->dados + i-x0) = *(v.dados + i);
         }
     }
@@ -55,7 +55,7 @@ vetor *slice(vetor v, int x0, int x1){
 
 
 void pop(vetor *v){
-    if(v->tamanho_ocupado = 0){
+    if(v->tamanho_ocupado == 0){
         printf("Não há nada para retirar");
         exit(1);
     }
