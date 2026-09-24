@@ -9,11 +9,16 @@ void append(vetor *v, int valor){
         if(v->dados == NULL){
             printf("Não consegui alocar");
             exit(1);
+        }
     }
 
     if(v->tamanho_ocupado == v->tamanho_alocado){
         v->dados =(int *) realloc(v->dados,(v->tamanho_alocado*2)*sizeof(int));
         v->tamanho_alocado *= 2;
+        if(v->dados == NULL){
+            printf("Não consegui alocar");
+            exit(1);
+        }
     }
     //adiciona o valor ao vetor
     *(v->dados + v->tamanho_ocupado) = valor;
@@ -32,21 +37,17 @@ void show(vetor v){
 vetor *slice(vetor v, int x0, int x1){
     vetor *novo = (vetor *) malloc(sizeof(vetor));
 
-    int j = 0;
-    for(int i = 0; i < v.tamanho_ocupado; i++){
-        if(*(v.dados+i) >= x0 && *(v.dados+i) <= x1){
-            j++;
-        }
-    }
-    novo->tamanho_alocado = j;
-    novo->tamanho_ocupado = j;
+    novo->tamanho_alocado = x1-x0;
+    novo->tamanho_ocupado = x1-x0;
     novo->dados = (int *) malloc(novo->tamanho_alocado*sizeof(int));
+    if(novo->dados == NULL){
+            printf("Não consegui alocar");
+            exit(1);
+        }
 
-    int k = 0;
     for(int i = 0; i < v.tamanho_ocupado; i++ ){
-        if(*(v.dados+i) >= x0 && *(v.dados+i) <= x1){
-            *(novo->dados+k) = *(v.dados+i);
-            k++;
+        if(i >= x0 && i <= x1){
+            *(novo->dados + i-x0) = *(v.dados + i);
         }
     }
     return novo;
@@ -54,7 +55,9 @@ vetor *slice(vetor v, int x0, int x1){
 
 
 void pop(vetor *v){
-    if(v->tamanho_ocupado > 0){
-        v->tamanho_ocupado--;
+    if(v->tamanho_ocupado = 0){
+        printf("Não há nada para retirar");
+        exit(1);
     }
+    v->tamanho_ocupado--;
 }
